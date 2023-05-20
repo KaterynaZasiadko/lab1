@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['wordtree']});
+      google.charts.setOnLoadCallback(drawSimpleNodeChart);
+      function drawSimpleNodeChart() {
+
+        var data = google.visualization.arrayToDataTable(
+          [ ['Phrases'],
+          ['HTML (HyperText Markup Language — мова розмітки гіпертексту) — стандартизована мова розмітки документів для перегляду вебсторінок у браузері. Браузери отримують HTML документ від сервера за протоколами HTTP/HTTPS або відкривають з локального диска, далі інтерпретують код в інтерфейс, який відображатиметься на екрані монітора. За допомогою конструкцій HTML, зображення та інші обєкти, такі як інтерактивні форми, можуть бути вбудовані у візуалізовану сторінку. Елементи HTML окреслені тегами, написаними з використанням кутових дужок. Теги на кшталт <img /> чи <input /> безпосередньо виводять вміст на сторінку. Інші теги, такі як <p>, оточують текст і надають інформацію про нього, а також можуть включати інші теги як піделементи. Браузери не показують теги HTML, але використовують їх для інтерпретації вмісту сторінки. В HTML можна вбудовувати програми, написані на скриптових мовах, наприклад JavaScript, які впливають на поведінку та вміст вебсторінок. 1980 року фізик Тім Бернерс-Лі, який на той час був співробітником CERN, запропонував і прототипував систему INQUIRE, яка мала полегшити сумісне користування документами для дослідників CERN. 1989 року Бернерс-Лі запропонував впровадити на базі Internet гіпертекстову систему документів.']
+           ]
+        );
+        var options = {
+          wordtree: {
+            format: 'implicit',
+            type: 'double',
+            word: 'HTML'
+          }
+        };
+        var wordtree = new google.visualization.WordTree(document.getElementById('wordtree_double'));
+        wordtree.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wordtree_double" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
